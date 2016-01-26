@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Dojo Survey</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'quiz/style.css' %}">
+
+</head>
+<body>
+	<form action="{% url 'svy-submit' %}" method="post">
+		{% csrf_token %}
+		<label for="name"> Your name: 
+			<input type="text" id="name" name="name" />
+		</label>
+		<label for="location"> Dojo Location:
+			<select name="location" id="location">
+				<option value='San Jose'>San Jose</option>
+				<option value='Bellevue'>Bellevue</option>
+				<option value='Dallas'>Dallas</option>
+			</select>
+		</label>
+		<label for="language"> Favorite language:
+			<select name="language" id="language">
+				<option value='Ruby'>Ruby</option>
+				<option value='Python'>Python</option>
+				<option value='Javascript'>Javascript</option>
+			</select>
+		</label>
+		<label for="comments"> Comments: 
+			<input type="text" id="comments" name="comments" />
+		</label>
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Dojo Survey</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'quiz/style.css' %}">
+
+</head>
+<body>
+	<h1>Your results!</h1>
+	<p>You have taken the survey {{request.session.count}} times!</p>
+	<p>Name: {{request.session.name}}</p>
+	<p>Location: {{request.session.location}} </p>
+	<p>Favorite Language: {{request.session.language}}</p>
+	<p>Comment: {{request.session.comments}}</p>
+</body>
+</html>
